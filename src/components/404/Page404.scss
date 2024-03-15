@@ -1,0 +1,10 @@
+@use "src/scss" as *;
+
+.page404 {
+  min-height: calc(100vh - $header-height);
+  height: 100%;
+
+  .title {
+    font-size: 62px;
+  }
+}

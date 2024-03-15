@@ -1,0 +1,78 @@
+@use "src/scss" as *;
+
+.vacancy {
+  padding-block: 4rem 6rem;
+
+  &__titles {
+    max-width: 80%;
+    text-align: center;
+    margin: 0 auto;
+
+    .title {
+      font-weight: 600;
+      font-size: 44px;
+      margin-bottom: 2rem;
+      color: $txt-secondary-color;
+    }
+    .desc {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 1.4;
+      margin-bottom: 3rem;
+      color: $txt-gray-color;
+    }
+  }
+
+  &__form {
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1rem;
+    padding: 2rem;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: 2px solid $main-color;
+
+    .label:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+    .inp {
+      font-size: 18px;
+      padding: 1.2rem;
+      border-radius: 10px;
+      border: 1px solid #f2f2f2;
+      outline: none;
+      transition: border 0.3s ease,
+      box-shadow 0.3s ease;
+
+      &.hide {
+        display: none;
+      }
+      &.file {
+        background: #fff;
+      }
+
+      &.area {
+        margin-bottom: 1rem;
+        border-color: #e8ce5d;
+        background: #faf4db;
+        resize: vertical;
+
+        &:focus {
+          border-color: #e8ce5d;
+          box-shadow: 0 2px 10px #e8ce5d55;
+        }
+      }
+
+      &:focus {
+        border-color: $main-color;
+        box-shadow: 0 2px 10px #089EAE35;
+      }
+    }
+
+    .btn {
+      font-size: 16px;
+      padding-block: 1rem;
+    }
+  }
+}

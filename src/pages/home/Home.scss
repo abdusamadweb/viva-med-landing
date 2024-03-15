@@ -1,0 +1,461 @@
+@use "src/scss" as *;
+
+.home {
+
+  .def-title {
+    max-width: 800px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 80px;
+    text-transform: capitalize;
+    margin: 0 auto 3rem;
+    color: $txt-secondary-color;
+
+    @include laptop {
+      max-width: 500px;
+      font-size: 50px;
+      margin: 0 auto 2rem;
+    }
+  }
+
+  .hero {
+    min-height: calc(100vh - $header-height);
+    padding-block: 4rem;
+    background-image: url('../../assets/images/main-bg.png');
+    background-position: 100% top;
+    background-size: 75%;
+    background-repeat: no-repeat;
+
+    @include breakpoint-down(1620px) {
+      background-position: 100% bottom;
+      background-size: 80%;
+    }
+    @include breakpoint-down(1250px) {
+      place-items: normal;
+      background-size: 100%;
+    }
+    @include mobile {
+      background-size: 120%;
+    }
+    @include phone {
+      background-size: 140%;
+    }
+    
+    &__titles {
+
+      .title {
+        max-width: 60%;
+        font-weight: 600;
+        font-size: 100px;
+        text-transform: capitalize;
+        margin-bottom: 2rem;
+        color: $txt-secondary-color;
+
+        @include laptop {
+          font-size: 60px;
+        }
+        @include breakpoint-down(1250px) {
+          max-width: 80%;
+        }
+        @include mobile {
+          max-width: 100%;
+        }
+      }
+
+      .desc {
+        max-width: 50%;
+        font-size: 32px;
+        line-height: 1.5;
+        margin-bottom: 6rem;
+        color: $txt-gray-color;
+
+        @include laptop {
+          font-size: 22px;
+        }
+        @include breakpoint-down(1250px) {
+          max-width: 60%;
+        }
+        @include mobile {
+          max-width: 90%;
+        }
+      }
+    }
+
+    &__btn {
+      box-shadow: 0 10px 15px 0 #089eae40;
+      transition: transform 0.3s ease,
+      opacity 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+    }
+  }
+
+  .about {
+    padding-block: 4rem;
+    background: #fafafa;
+
+    &__title {
+      margin-bottom: 3rem;
+
+      @include laptop {
+        margin-bottom: 2rem;
+      }
+    }
+    &__desc {
+      font-size: 28px;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      color: #5f6880;
+
+      @include laptop {
+        font-size: 20px;
+      }
+    }
+
+    &__sub {
+      font-weight: 500;
+      font-size: 26px;
+      margin-bottom: 1rem;
+
+      @include laptop {
+        font-size: 18px;
+      }
+    }
+
+    &__list {
+      display: flex;
+      flex-flow: column;
+      gap: 12px;
+
+      .item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        .icon {
+          font-size: 26px;
+          color: $main-color;
+
+          @include laptop {
+            font-size: 18px;
+          }
+        }
+        .txt {
+          font-weight: 500;
+          font-size: 24px;
+          color: $txt-secondary-color;
+
+          @include laptop {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  .services {
+    padding-block: 4rem;
+    background: #dfeef2;
+
+    &__wrapper {
+      display: grid;
+      grid-template-columns: 1.2fr 2fr;
+
+      @include mobile {
+        grid-template-columns: 1fr;
+      }
+
+      .filters {
+
+        &__item {
+          font-weight: 500;
+          font-size: 24px;
+          line-height: 1.5;
+          padding: 1.5rem;
+          cursor: pointer;
+          transition: color 0.2s ease,
+          background-color 0.2s ease;
+
+          @include laptop {
+            font-size: 18px;
+          }
+          @include mobile {
+            padding: 1rem;
+          }
+
+          &.active {
+            border-radius: 10px 0 0 10px;
+            color: $main-color;
+            background: $body-bg;
+
+            @include mobile {
+              border-radius: 10px;
+            }
+          }
+
+          .num {
+            margin-right: 10px;
+          }
+        }
+        
+        &__benefits {
+
+          &.active {
+            @include mobile {
+              display: block !important;
+            }
+          }
+        }
+      }
+
+      .benefits {
+        padding: 1.5rem 2rem;
+        border-radius: 0 10px 10px 0;
+        background: $body-bg;
+
+        @include mobile {
+          display: none;
+          padding-inline: 1.5rem;
+        }
+
+        &__item {
+
+          .title {
+            display: block;
+            font-weight: 600;
+            font-size: 28px;
+            margin-bottom: 1rem;
+            color: $txt-secondary-color;
+
+            @include laptop {
+              font-size: 20px;
+            }
+          }
+
+          .desc {
+            font-size: 20px;
+            line-height: 1.4;
+            margin-bottom: 1rem;
+            color: $txt-gray-color;
+
+            @include laptop {
+              font-size: 16px;
+            }
+          }
+
+          .list {
+            display: flex;
+            flex-flow: row wrap;
+            gap: 12px;
+
+            &__item {
+              font-weight: 500;
+              font-size: 20px;
+              padding: 10px 1rem;
+              border-radius: 15px;
+              border: 2px solid $main-color;
+              color: $main-color;
+              background: transparent;
+
+              @include laptop {
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .doctors {
+    padding-block: 4rem;
+    background: #eff7fb;
+
+    .swiper {
+      padding-bottom: 3rem;
+
+      &-slide {
+        border-radius: 20px;
+
+        .inner {
+          display: flex;
+          flex-flow: column;
+          justify-content: space-between;
+          padding: 1.5rem;
+          margin-top: -4px;
+          border-radius: 0 0 20px 20px;
+          background: #fff;
+        }
+
+        .wrapper {
+          min-height: 300px;
+
+          @include laptop {
+            min-height: 260px;
+          }
+          @include mobile {
+            min-height: 220px;
+          }
+        }
+
+        .img {
+          width: 100%;
+          min-height: 200px;
+          border-radius:  20px 20px 0 0;
+          object-fit: cover;
+        }
+
+        .txt {
+          display: block;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 1.4;
+          margin-bottom: 1rem;
+          color: $txt-gray-color;
+
+          @include laptop {
+            font-size: 16px;
+          }
+        }
+
+        .name {
+          font-weight: 600;
+          font-size: 24px;
+          margin-bottom: 1rem;
+          color: $txt-secondary-color;
+
+          @include laptop {
+            font-size: 18px;
+          }
+        }
+
+        .experience {
+          font-weight: 500;
+          font-size: 24px;
+          margin-bottom: 1rem;
+
+          @include laptop {
+            font-size: 18px;
+          }
+        }
+
+        .link {
+          text-align: center;
+          font-weight: 500;
+          font-size: 20px;
+          padding: 12px 3rem;
+          border-radius: 20px;
+          color: $main-color;
+          background: #cce7ea;
+
+          @include laptop {
+            font-size: 16px;
+          }
+        }
+      }
+
+      &-pagination {
+        &-bullet {
+          width: 25px;
+          height: 4px;
+          border-radius: 10px;
+        }
+        &-bullet-active {
+          background: $main-color;
+        }
+      }
+    }
+  }
+
+  .contact {
+    padding-block: 4rem;
+
+    &__inner {
+      text-align: center;
+      padding: 3rem;
+      border-radius: 20px;
+      color: #fff;
+      background: $main-color;
+
+      @include mobile {
+        padding-inline: 2rem;
+      }
+    }
+
+    &__titles {
+      max-width: 60%;
+      margin: 0 auto;
+
+      @include tablet {
+        max-width: 80%;
+      }
+      @include mobile {
+        max-width: 100%;
+      }
+
+      .title {
+        font-weight: 600;
+        font-size: 48px;
+        line-height: 1.4;
+        margin-bottom: 1rem;
+
+        @include laptop {
+          font-size: 38px;
+        }
+      }
+      .desc {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 1.4;
+        margin-bottom: 3rem;
+        color: #c5d1da;
+
+        @include laptop {
+          font-size: 18px;
+        }
+      }
+    }
+
+    .form {
+      max-width: 40%;
+      margin: 0 auto;
+
+      @include breakpoint-down(1100px) {
+        max-width: 60%;
+      }
+      @include breakpoint-down(777px) {
+        max-width: 80%;
+      }
+      @include breakpoint-down(550px) {
+        max-width: 100%;
+      }
+
+      &__label {
+        display: flex;
+        justify-content: space-between;
+        gap: 5px;
+        padding: 5px;
+        border-radius: 10px;
+        background: #fff;
+
+        .inp {
+          font-size: 22px;
+          padding-inline: 1rem 10px;
+          border-radius: inherit;
+          border: none;
+          outline: none;
+
+          @include laptop {
+            font-size: 16px;
+            padding-inline: 10px;
+          }
+        }
+        .btn {
+          border-radius: inherit;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+@use "./scss" as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+body {
+  font-family: $font-family;
+  color: $txt-color;
+  background: $body-bg;
+}
+
+
+.btn {
+  font-weight: 500;
+  font-size: 22px;
+  padding: 1.2rem 3rem;
+  border-radius: 15px;
+  color: #fff;
+  background: $main-color;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  @include laptop {
+    font-size: 14px;
+    padding: 12px 2rem;
+  }
+}
