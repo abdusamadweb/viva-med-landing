@@ -27,7 +27,7 @@
     background-repeat: no-repeat;
 
     @include breakpoint-down(1620px) {
-      background-position: 100% bottom;
+      background-position: bottom 100%;
       background-size: 80%;
     }
     @include breakpoint-down(1250px) {
@@ -244,6 +244,12 @@
             @include laptop {
               font-size: 16px;
             }
+          }
+
+          .price {
+            font-weight: 500;
+
+            margin-bottom: 1rem;
           }
 
           .list {

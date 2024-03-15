@@ -1,62 +1,9 @@
 import {useState} from "react";
+import {benefits, filters} from "../../assets/mock/servicesList.js";
 
 const HomeServices = () => {
 
     const [activeFilter, setActiveFilter] = useState(1)
-
-    const filters = [
-        {
-            id: 1,
-            title: 'Диагностика в Viva med'
-        },
-        {
-            id: 2,
-            title: 'Хирургия'
-        },
-        {
-            id: 3,
-            title: 'Лабаротория'
-        },
-        {
-            id: 4,
-            title: 'Прием'
-        },
-        {
-            id: 5,
-            title: 'Группа'
-        },
-    ]
-
-    const benefits = [
-        {
-            id: 1,
-            title: 'Диагностика в Viva med',
-            desc: 'Используется только современное высокотехнологичное оборудование мировых производителей, позволяющее выявить заболевание на ранней стадии и своевременно приступить к лечению.',
-            minPrice: 0,
-            list: [
-                'УЗД',
-                'Вытяжная кровать',
-                'Эфферентная терапия',
-                'Массаж',
-                'МРТ',
-                'МСКТ',
-                'Стационар',
-                'Процедурный кабинет',
-                'Физиотерапия',
-                'Альтернативная медицина',
-                'ЭЭГ- Электроэнцефалография',
-            ]
-        },
-        {
-            id: 2,
-            title: 'Диагностика в Viva med',
-            desc: 'Используется только современное высокотехнологичное оборудование мировых производителей, позволяющее выявить заболевание на ранней стадии и своевременно приступить к лечению.',
-            minPrice: 0,
-            list: [
-                'УЗД'
-            ]
-        },
-    ]
 
 
     return (
@@ -84,6 +31,7 @@ const HomeServices = () => {
                                                     <li className='benefits__item' key={i.id}>
                                                         <span className='title'>{ i.title }</span>
                                                         <p className="desc">{ i.desc }</p>
+                                                        <span className='price'>От { i.minPrice } сум</span>
                                                         <ul className='list'>
                                                             {
                                                                 i.list.map((x, index) => (
@@ -107,6 +55,7 @@ const HomeServices = () => {
                                     <li className='benefits__item' key={i.id}>
                                         <span className='title'>{ i.title }</span>
                                         <p className="desc">{ i.desc }</p>
+                                        <span className='price'>От { i.minPrice } сум</span>
                                         <ul className='list'>
                                             {
                                                 i.list.map((x, index) => (

@@ -6,11 +6,14 @@ import en from '../../assets/images/langs/en.png'
 import ru from '../../assets/images/langs/ru.png'
 import uz from '../../assets/images/langs/uz.png'
 import {useLang} from "../../context/LangProvider.jsx"
+import {navList} from "../../assets/mock/navList.js";
 
 const Header = () => {
 
-    const [activeLang, setActiveLang] = useState(false)
+    const [navActive, setNavActive] = useState(false)
 
+
+    const [activeLang, setActiveLang] = useState(false)
 
     const langs = [
         {
@@ -51,20 +54,20 @@ const Header = () => {
                     <Link className='header__logo' to='/'>
                         <img className='img' src={logo} alt="logo"/>
                     </Link>
-                    <nav className='nav row align-center g1'>
+                    <nav className={`nav ${navActive ? 'active' : ''}`}>
                         <ul className='nav__list row g2'>
-                            <li className='item'>
-                                <NavLink className='item__link' to='/'>Home</NavLink>
-                            </li>
-                            <li className='item'>
-                                <a className='item__link' href='/#services'>Services</a>
-                            </li>
-                            <li className='item'>
-                                <a className='item__link' href='/#doctors'>Doctors</a>
-                            </li>
-                            <li className='item'>
-                                <NavLink className='item__link' to='/vacancy'>Vacancy</NavLink>
-                            </li>
+                            {
+                                navList.map((i, index) => (
+                                    <li className='item' key={index} onClick={() => setNavActive(false)}>
+                                        {
+                                            i.link ?
+                                                <NavLink className='item__link' to={i.link}>{ i.name }</NavLink>
+                                                :
+                                                <a className='item__link' href={i.href}>{ i.name }</a>
+                                        }
+                                    </li>
+                                ))
+                            }
                         </ul>
                     </nav>
 
@@ -91,6 +94,14 @@ const Header = () => {
                             </ul>
                         </div>
                         <a className='header__btn btn' href='/#contact'>Contact us</a>
+
+                        <button className='open-nav' onClick={() => setNavActive(!navActive)}>
+                            {
+                                navActive ?
+                                    <i className="fa-solid fa-xmark"/>
+                                    : <i className="fa-solid fa-bars"/>
+                            }
+                        </button>
                     </div>
                 </div>
             </div>

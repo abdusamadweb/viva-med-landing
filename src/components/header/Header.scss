@@ -24,6 +24,41 @@
   }
 
   .nav {
+    @include breakpoint-down(850px) {
+      position: absolute;
+      top: 100%;
+      right: -100%;
+      width: 100%;
+      height: 100%;
+      transition: right 0.5s ease;
+      z-index: 2;
+
+      &__list {
+        height: calc(100vh - $header-height);
+        flex-flow: column;
+        text-align: center;
+        gap: 6px;
+        padding-block: 1rem;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        background: $body-bg;
+
+        .item__link {
+          width: 100%;
+          padding: 1rem;
+          background: $body-bg;
+
+          &.active {
+            color: #fff !important;
+            background: $main-color;
+          }
+        }
+      }
+    }
+
+    &.active {
+      right: 0;
+    }
 
     &__list {
 
@@ -54,6 +89,7 @@
     position: relative;
     padding-inline: 10px;
     margin-right: 1rem;
+    z-index: 5;
 
     &.active {
 
@@ -140,6 +176,22 @@
 
     @include laptop {
       padding: 12px 1.5rem;
+    }
+    @include breakpoint-down(850px) {
+      display: none;
+    }
+  }
+
+  .open-nav {
+    display: none;
+
+    @include breakpoint-down(850px) {
+      display: block;
+    }
+
+    i {
+      font-size: 28px;
+      color: $txt-color;
     }
   }
 }

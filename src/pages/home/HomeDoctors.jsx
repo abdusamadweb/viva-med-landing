@@ -1,6 +1,6 @@
 import {Swiper, SwiperSlide} from 'swiper/react';
 import {Autoplay, Pagination} from 'swiper/modules'
-import {doctors} from "../../assets/scripts/mockAPI.js";
+import {doctors} from "../../assets/mock/doctorsList.js";
 import {Link} from "react-router-dom";
 
 // Import Swiper styles
