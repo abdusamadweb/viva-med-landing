@@ -40,7 +40,7 @@ const Vacancy = () => {
                                 type="file"
                                 name="file"
                             />
-                            <div className='inp file row align-center g1'>
+                            <div className='inp file area d-flex align-center g1'>
                                 <i className="fa-solid fa-paperclip"/>
                                 <span className='txt'>Прикрепить файл</span>
                             </div>
@@ -49,7 +49,7 @@ const Vacancy = () => {
                     <div>
                         <textarea
                             className='inp area'
-                            style={{height: '214px'}}
+                            // style={{height: '214px'}}
                             name="text"
                             placeholder='Ваше сообшение'
                         />

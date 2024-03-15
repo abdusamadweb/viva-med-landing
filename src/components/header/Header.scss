@@ -4,14 +4,23 @@
   position: sticky;
   left: 0;
   top: 0;
+  height: $header-height-max;
   padding-block: 1rem;
   border-bottom: 1px solid hsla(0,0%,95%,.251);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   z-index: 2;
 
+  @include laptop {
+    height: $header-height;
+  }
+
   &__logo {
-    width: 120px;
+    width: 200px;
+
+    @include laptop {
+      width: 120px;
+    }
   }
 
   .nav {
@@ -21,9 +30,13 @@
       .item {
         &__link {
           font-weight: 500;
-          font-size: 17px;
+          font-size: 26px;
           color: $txt-color;
           transition: color 0.2s ease;
+
+          @include laptop {
+            font-size: 17px;
+          }
 
           &.active {
             color: $main-color;
@@ -56,8 +69,12 @@
       cursor: pointer;
 
       .icon {
-        font-size: 18px;
+        font-size: 24px;
         color: $txt-color;
+
+        @include laptop {
+          font-size: 18px;
+        }
       }
     }
 
@@ -66,7 +83,7 @@
       top: 80%;
       left: 0;
       min-width: 150%;
-      border-radius: 5px;
+      border-radius: 10px;
       background: #fff;
       visibility: collapse;
       opacity: 0;
@@ -79,7 +96,7 @@
         align-items: center;
         gap: 6px;
         padding: 5px 10px;
-        border-radius: 5px;
+        border-radius: 10px;
         cursor: pointer;
         transition: color 0.2s ease,
         background-color 0.2s ease;
@@ -90,23 +107,39 @@
         }
 
         .img {
-          width: 25px;
+          width: 35px;
+
+          @include laptop {
+            width: 25px;
+          }
         }
         .txt {
           font-weight: 500;
-          font-size: 14px;
+          font-size: 18px;
+
+          @include laptop {
+            font-size: 14px;
+          }
         }
       }
     }
 
     .img {
-      width: 30px;
+      width: 40px;
       border-radius: 8px;
+
+      @include laptop {
+        width: 30px;
+      }
     }
   }
 
   &__btn {
-    padding: 12px 1.5rem;
+    padding: 1rem 2rem;
     border-radius: 20px;
+
+    @include laptop {
+      padding: 12px 1.5rem;
+    }
   }
 }

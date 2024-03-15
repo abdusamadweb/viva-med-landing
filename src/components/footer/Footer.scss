@@ -1,19 +1,38 @@
 @use '/src/scss' as *;
 
 .footer {
+  position: relative;
   padding-block: 3rem 2rem;
   color: #fff;
-  background: $footer-bg;
+  background-color: $footer-bg;
+
+  .bg {
+    inset: 0;
+    background-image: url('../../assets/images/logo.svg');
+    background-repeat: no-repeat;
+    background-position: 99% center;
+    opacity: 0.1;
+  }
 
   &__inner {
     display: grid;
     grid-template-columns: 1.5fr 1fr 1fr;
     gap: 1rem;
+
+    @include breakpoint-down(800px) {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
   }
 
   &__logo {
-    width: 150px;
-    margin-bottom: 2rem;
+    width: 220px;
+    margin-bottom: 3rem;
+
+    @include laptop {
+      width: 150px;
+      margin-bottom: 2rem;
+    }
   }
 
   .link {
@@ -26,8 +45,13 @@
   .sub {
     display: block;
     font-weight: 500;
+    font-size: 20px;
     margin-bottom: 1rem;
     color: #8f9b9e;
+
+    @include laptop {
+      font-size: 16px;
+    }
   }
 
   &__calls {
@@ -36,8 +60,12 @@
     .link {
       display: block;
       font-weight: 500;
-      font-size: 24px;
+      font-size: 32px;
       color: #fff;
+
+      @include laptop {
+        font-size: 24px;
+      }
 
       &.mail {
         margin-bottom: 12px;
@@ -47,31 +75,62 @@
 
   &__social {
 
+    @include breakpoint-down(800px) {
+      margin-bottom: 2rem;
+
+      .row {
+        justify-content: center;
+      }
+    }
+
     .link {
       color: #fff;
 
       i {
-        font-size: 22px;
+        font-size: 32px;
         color: inherit;
+
+        @include laptop {
+          font-size: 22px;
+        }
       }
     }
   }
 
   &__nav {
-    padding-top: 1rem;
+    padding-top: 2rem;
+
+    @include laptop {
+      padding-top: 1rem;
+    }
+
+    @include breakpoint-down(800px) {
+      display: none;
+    }
 
     .title {
       font-weight: 500;
-      font-size: 18px;
-      margin-bottom: 1rem;
+      font-size: 26px;
+      margin-bottom: 1.5rem;
+
+      @include laptop {
+        font-size: 18px;
+        margin-bottom: 1rem;
+      }
     }
 
     .item {
       &__link {
-        margin-bottom: 10px;
+        font-size: 22px;
+        margin-bottom: 1rem;
         color: #fff;
         opacity: 0.6;
         transition: opacity 0.2s ease;
+
+        @include laptop {
+          font-size: 16px;
+          margin-bottom: 12px;
+        }
 
         &:hover {
           opacity: 1;
@@ -80,12 +139,29 @@
     }
   }
 
+  &__navs {
+    display: none;
+
+    @include breakpoint-down(800px) {
+      display: block;
+      margin-bottom: 3rem;
+
+      .nav {
+        display: block;
+      }
+    }
+  }
+
   &__address {
     display: block;
     text-align: end;
     font-style: normal;
+    font-size: 24px;
     padding-block: 2rem 3rem;
-    //color: #8f9b9e;
+
+    @include laptop {
+      font-size: 16px;
+    }
   }
 
   &__rights {
@@ -93,9 +169,13 @@
 
     .desc {
       text-align: center;
-      font-size: 14px;
+      font-size: 18px;
       padding-top: 2rem;
       color: #8f9b9e;
+
+      @include laptop {
+        font-size: 14px;
+      }
     }
   }
 }

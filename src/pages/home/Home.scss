@@ -201,6 +201,7 @@
         }
         
         &__benefits {
+          display: none;
 
           &.active {
             @include mobile {

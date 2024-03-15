@@ -5,12 +5,49 @@ import logo from '../../assets/images/logo.svg'
 const Footer = () => {
     return (
         <div className='footer'>
+            <div className="bg"/>
             <div className="container">
                 <div className="footer__inner">
                     <div>
                         <Link className='footer__logo' to='/'>
                             <img className='img' src={logo} alt="logo"/>
                         </Link>
+                        <div className='footer__navs'>
+                            <div className='nav footer__nav'>
+                                <span className='title'>Quick links</span>
+                                <ul>
+                                    <li className='item'>
+                                        <Link className='item__link' to='/'>Home</Link>
+                                    </li>
+                                    <li className='item'>
+                                        <Link className='item__link' to='/#services'>Services</Link>
+                                    </li>
+                                    <li className='item'>
+                                        <Link className='item__link' to='/#doctors'>Doctors</Link>
+                                    </li>
+                                    <li className='item'>
+                                        <Link className='item__link' to='/vacancy'>Vacancy</Link>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className='nav footer__nav'>
+                                <span className='title'>Quick links</span>
+                                <ul>
+                                    <li className='item'>
+                                        <Link className='item__link' to='/'>Home</Link>
+                                    </li>
+                                    <li className='item'>
+                                        <Link className='item__link' to='/#services'>Services</Link>
+                                    </li>
+                                    <li className='item'>
+                                        <Link className='item__link' to='/#doctors'>Doctors</Link>
+                                    </li>
+                                    <li className='item'>
+                                        <Link className='item__link' to='/vacancy'>Vacancy</Link>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                         <div className='footer__calls'>
                             <span className='sub'>Let's talk</span>
                             <a className='link mail' href="mailto:vivamed@gmail.com">vivamed@gmail.com</a>
